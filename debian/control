@@ -1,0 +1,12 @@
+Source: piaware-web
+Section: embedded
+Priority: extra
+Maintainer: FlightAware Developers <adsb-devs@flightaware.com>
+Build-Depends: debhelper(>=9)
+Standards-Version: 3.9.3
+Homepage: https://github.com/flightaware
+
+Package: piaware-web
+Architecture: all
+Depends: lighttpd, ${misc:Depends}
+Description: PiAware landing webpage

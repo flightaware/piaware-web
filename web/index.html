@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>PiAware Info</title>
+    <link rel="icon" href="./favicon.ico">
+    <link href="./lib/bootstrap.min.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <script id="indicator-template" type="text/template">
+      <div class="btn-group" role="group">
+        <button id="status-<%= name %>" class="btn btn-<%= status %>" data-toggle="tooltip" data-placement="bottom" title="<%- message %>"><%= title %></button>
+      </div>
+    </script>
+
+    <script id="alert-template" type="text/template">
+      <div class="alert alert-<%= type %>" role="alert"><%= message %></div>
+    </script>
+
+    <script id="description-template" type="text/template">
+      <p>
+        <%= t('This is a PiAware ADS-B feeder') %>.
+        <%= t('For more information visit') %> <a href="https://flightaware.com/adsb/piaware/">flightaware.com</a>.
+        <%= t('Below you can view information to determine if your site is functioning properly') %>.
+      </p>
+    </script>
+
+    <div class="container">
+
+      <div class="page-header text-center">
+        <img src="./logo.gif"></img>
+        <p class="lead"><span id="status">PiAware Status</span></p>
+      </div>
+
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1 text-center">
+          <div id="description" class="row"></div>
+
+          <div class="row">
+            <div id="indicators" class="btn-group btn-group-justified" role="group"></div>
+          </div>
+
+          <br/>
+
+          <div id="alert"></div>
+
+          <br/><br/><br/>
+
+          <div class="row">
+            <a id="map-link" href="/dump1090-fa/" class="btn btn-primary btn-lg">Go to Map</a>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <script src="./lib/jquery.min.js"></script>
+    <script src="./lib/underscore.min.js"></script>
+    <script src="./lib/backbone.min.js"></script>
+    <script src="./lib/bootstrap.min.js"></script>
+    <script src="./translations/lang.js"></script>
+    <script src="./index.js"></script>
+  </body>
+</html>

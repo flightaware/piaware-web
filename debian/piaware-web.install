@@ -1,0 +1,2 @@
+web/* var/www/html/
+lighttpd/*.conf etc/lighttpd/conf-available/
