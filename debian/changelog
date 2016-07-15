@@ -1,5 +1,5 @@
-piaware-web (3.0.1~dev) UNRELEASED; urgency=medium
+piaware-web (3.0.1) stable; urgency=medium
 
   * Initial release.
 
- -- Oliver Jowett <oliver@mutability.co.uk>  Mon, 11 Jul 2016 09:35:29 +0100
+ -- Oliver Jowett <oliver@mutability.co.uk>  Fri, 15 Jul 2016 15:57:00 +0100
