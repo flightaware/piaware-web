@@ -1,3 +1,9 @@
+piaware-web (3.1.0) stable; urgency=medium
+
+  * No-change release for PiAware 3.1.0
+
+ -- Oliver Jowett <oliver@mutability.co.uk>  Thu, 22 Sep 2016 17:10:59 +0100
+
 piaware-web (3.0.3) stable; urgency=medium
 
   * No-change release for PiAware 3.0.3
