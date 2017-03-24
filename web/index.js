@@ -50,6 +50,72 @@
 		}
 	});
 
+	var StatsLink = Backbone.Model.extend({
+		defaults: {
+			url: '',
+		},
+
+		updateFromData: function(data) {
+			if ('site_url' in data) {
+				this.set('url', data['site_url']);
+			} else {
+				this.set('url', '');
+			}
+		}
+	});
+
+	var StatsLinkView = Backbone.View.extend({
+		template: _.template($('#stats-template').html()),
+
+		initialize: function() {
+			this.listenTo(this.model, 'change', this.render);
+			this.render();
+		},
+
+		render: function() {
+			if (this.model.get('url') == '') {
+				this.$el.addClass('hidden');
+			} else {
+				this.$el.removeClass('hidden');
+				var rendered = this.template(this.model.attributes);
+				this.$el.html(rendered);
+			}
+		},
+	});
+
+	var ClaimLink = Backbone.Model.extend({
+		defaults: {
+			feeder_id: '',
+		},
+
+		updateFromData: function(data) {
+			if ('unclaimed_feeder_id' in data) {
+				this.set('feeder_id', data['unclaimed_feeder_id']);
+			} else {
+				this.set('feeder_id', '');
+			}
+		}
+	});
+
+	var ClaimLinkView = Backbone.View.extend({
+		template: _.template($('#claim-template').html()),
+
+		initialize: function() {
+			this.listenTo(this.model, 'change', this.render);
+			this.render();
+		},
+
+		render: function() {
+			if (this.model.get('feeder_id') == '') {
+				this.$el.addClass('hidden');
+			} else {
+				this.$el.removeClass('hidden');
+				var rendered = this.template(this.model.attributes);
+				this.$el.html(rendered);
+			}
+		},
+	});
+
 	var Indicator = Backbone.Model.extend({
 		defaults: {
 			visible: false,
@@ -196,6 +262,18 @@
 		model: alert
 	});
 
+	var stats = new StatsLink();
+	var statsView = new StatsLinkView({
+		el: '#stats',
+		model: stats
+	});
+
+	var claim = new ClaimLink();
+	var claimView = new ClaimLinkView({
+		el: '#claim',
+		model: claim
+	});
+
 	var interval = {
 		id: undefined,
 		setByData: false
@@ -264,6 +342,8 @@
 
 		} else if (isRunning) {
 			indicators.updateFromData(data);
+			stats.updateFromData(data);
+			claim.updateFromData(data);
 			alert.hide();
 		}
 
@@ -300,6 +380,9 @@
 			message: t("PiAware doesn't appear to be running!")
 		});
 		alert.show();
+
+		stats.set('url', '');
+		claim.set('feeder_id, '');
 	}
 
 	var prevTime;

@@ -10,7 +10,7 @@
   <body>
     <script id="indicator-template" type="text/template">
       <div class="btn-group" role="group">
-        <button id="status-<%= name %>" class="btn btn-<%= status %>" data-toggle="tooltip" data-placement="bottom" title="<%- message %>"><%= title %></button>
+	<button id="status-<%= name %>" class="btn btn-<%= status %>" data-toggle="tooltip" data-placement="bottom" title="<%- message %>"><%= title %></button>
       </div>
     </script>
 
@@ -20,38 +20,55 @@
 
     <script id="description-template" type="text/template">
       <p>
-        <%= t('This is a PiAware ADS-B feeder') %>.
-        <%= t('For more information visit') %> <a href="https://flightaware.com/adsb/piaware/">flightaware.com</a>.
-        <%= t('Below you can view information to determine if your site is functioning properly') %>.
+	<%= t('This is a PiAware ADS-B feeder') %>.
+	<%= t('For more information visit') %> <a href="https://flightaware.com/adsb/piaware/">flightaware.com</a>.
+	<%= t('Below you can view information to determine if your site is functioning properly') %>.
+      </p>
+    </script>
+
+    <script id="stats-template" type="text/template">
+      <p>
+	<a href="<%= url %>"><%= t('View your site statistics online') %></a>.
+      </p>
+    </script>
+
+    <script id="claim-template" type="text/template">
+      <p>
+	<%= t('This feeder is not yet associated with a FlightAware account') %>.
+	<a href="https://flightaware.com/adsb/piaware/claim/<%- feeder_id %>"><%= t('Claim this feeder to associate it with your FlightAware account') %></a>.
       </p>
     </script>
 
     <div class="container">
 
       <div class="page-header text-center">
-        <img src="./logo.gif"></img>
-        <p class="lead"><span id="status">PiAware Status</span></p>
+	<img src="./logo.gif"></img>
+	<p class="lead"><span id="status">PiAware Status</span></p>
       </div>
 
       <div class="row">
-        <div class="col-md-10 col-md-offset-1 text-center">
-          <div id="description" class="row"></div>
+	<div class="col-md-10 col-md-offset-1 text-center">
+	  <div id="description" class="row"></div>
 
-          <div class="row">
-            <div id="indicators" class="btn-group btn-group-justified" role="group"></div>
-          </div>
+	  <div class="row">
+	    <div id="indicators" class="btn-group btn-group-justified" role="group"></div>
+	  </div>
 
-          <br/>
+	  <br/>
 
-          <div id="alert"></div>
+	  <div id="alert"></div>
 
-          <br/><br/><br/>
+	  <br/>
+	  <div id="stats"></div>
+	  <br/>
+	  <div id="claim"></div>
+	  <br/>
 
-          <div class="row">
-            <a id="map-link" href="/dump1090-fa/" class="btn btn-primary btn-lg">Go to Map</a>
-          </div>
+	  <div class="row">
+	    <a id="map-link" href="/dump1090-fa/" class="btn btn-primary btn-lg">Go to Map</a>
+	  </div>
 
-        </div>
+	</div>
       </div>
 
     </div>
