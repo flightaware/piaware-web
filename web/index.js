@@ -382,7 +382,7 @@
 		alert.show();
 
 		stats.set('url', '');
-		claim.set('feeder_id, '');
+		claim.set('feeder_id', '');
 	}
 
 	var prevTime;
