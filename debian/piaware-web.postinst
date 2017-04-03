@@ -21,9 +21,13 @@ NAME=flightfeeder-gui
 
 case "$1" in
     configure)
-        # set up lighttpd
-        echo "Enabling lighttpd integration.." >&2
-        lighty-enable-mod piaware || true
+        if dpkg --compare-versions "$2" lt "3.0.1"
+        then
+           # set up lighttpd
+           echo "Enabling lighttpd integration.." >&2
+           lighty-enable-mod piaware || true
+        fi
+
         echo "Restarting lighttpd.." >&2
         invoke-rc.d lighttpd force-reload || true
         ;;
