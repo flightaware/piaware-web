@@ -1,3 +1,9 @@
+piaware-web (3.6.0) stable; urgency=medium
+
+  * No-change release for PiAware 3.6.0
+
+ -- Oliver Jowett <oliver@mutability.co.uk>  Fri, 11 May 2018 15:41:21 +0100
+
 piaware-web (3.5.0) stable; urgency=medium
 
   * Add a link on the status page to the online site stats page when provided.
