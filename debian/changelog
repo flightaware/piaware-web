@@ -1,10 +1,10 @@
-piaware-web (3.5.0) UNRELEASED; urgency=medium
+piaware-web (3.5.0) stable; urgency=medium
 
   * Add a link on the status page to the online site stats page when provided.
   * Add a link on the status page to allow claiming an unclaimed feeder by ID.
   * Only enable the lighttpd config once, not on every upgrade.
 
- -- Oliver Jowett <oliver@mutability.co.uk>  Fri, 24 Mar 2017 11:29:26 +0000
+ -- Oliver Jowett <oliver@mutability.co.uk>  Mon, 03 Apr 2017 18:22:16 +0100
 
 piaware-web (3.4.0) stable; urgency=medium
 
