@@ -1,8 +1,8 @@
-piaware-web (3.7.0~dev) UNRELEASED; urgency=medium
+piaware-web (3.7.0) stable; urgency=medium
 
   * No-change release for PiAware 3.7.0
 
- -- Eric Tran <eric.tran@flightaware.com>  Mon, 11 Mar 2019 11:27:00 -0600
+ -- Oliver Jowett <oliver@mutability.co.uk>  Thu, 21 Mar 2019 22:57:49 +0000
 
 piaware-web (3.6.3) stable; urgency=medium
 
