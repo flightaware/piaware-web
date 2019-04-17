@@ -39,6 +39,10 @@
       </p>
     </script>
 
+    <script id="maplink-template" type="text/template">
+        <a href="<%= url %>" class="btn btn-primary btn-lg"><%= text %></a>
+    </script>
+
     <div class="container">
 
       <div class="page-header text-center">
@@ -64,10 +68,10 @@
 	  <div id="claim"></div>
 	  <br/>
 
-	  <div class="row">
-	    <a id="map-link" href="/dump1090-fa/" class="btn btn-primary btn-lg">Go to Map</a>
+          <div class="row">
+	     <div id="map"></div>
+	     <div id="uatmap"></div>
 	  </div>
-
 	</div>
       </div>
 

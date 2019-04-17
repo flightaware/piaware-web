@@ -116,6 +116,76 @@
 		},
 	});
 
+	var Skyview1090MapLink = Backbone.Model.extend({
+		defaults: {
+			url: '/dump1090-fa/',
+			text: 'Go to Skyview 1090 Map',
+			visible: true,
+		},
+
+                updateFromData: function(data) {
+                        if ('MODES_enabled' in data && data['MODES_enabled'] == true) {
+                                this.set('visible', true);
+                        } else {
+                                this.set('visible', false);
+                        }
+                }
+	});
+
+	var Skyview1090MapLinkView = Backbone.View.extend({
+		template: _.template($('#maplink-template').html()),
+
+		initialize: function() {
+			this.listenTo(this.model, 'change', this.render);
+			this.render();
+		},
+
+		render: function() {
+			if (!this.model.get('visible')) {
+				this.$el.addClass('hidden');
+			} else {
+				this.$el.removeClass('hidden');
+				var rendered = this.template(this.model.attributes);
+				this.$el.html(rendered);
+			}
+		},
+	});
+
+        var Skyview978MapLink = Backbone.Model.extend({
+                defaults: {
+			url: '/skyview978/',
+			text: 'Go to Skyview 978 Map',
+			visible: false,
+                },
+
+                updateFromData: function(data) {
+                        if ('UAT_enabled' in data && data['UAT_enabled'] == true) {
+                                this.set('visible', true);
+                        } else {
+                                this.set('visible', false);
+                        }
+                }
+        });
+
+        var Skyview978MapLinkView = Backbone.View.extend({
+                template: _.template($('#maplink-template').html()),
+
+                initialize: function() {
+                        this.listenTo(this.model, 'change', this.render);
+                        this.render();
+                },
+
+                render: function() {
+                        if (!this.model.get('visible')) {
+                                this.$el.addClass('hidden');
+                        } else {
+                                this.$el.removeClass('hidden');
+                                var rendered = this.template(this.model.attributes);
+                                this.$el.html(rendered);
+                        }
+                },
+        });
+
 	var Indicator = Backbone.Model.extend({
 		defaults: {
 			visible: false,
@@ -274,6 +344,18 @@
 		model: claim
 	});
 
+	var map = new Skyview1090MapLink();
+	var mapView = new Skyview1090MapLinkView({
+		el: '#map',
+		model: map
+	});
+
+        var uatmap = new Skyview978MapLink();
+        var uatmapView = new Skyview978MapLinkView({
+                el: '#uatmap',
+                model: uatmap
+        });
+
 	var interval = {
 		id: undefined,
 		setByData: false
@@ -344,6 +426,8 @@
 			indicators.updateFromData(data);
 			stats.updateFromData(data);
 			claim.updateFromData(data);
+			map.updateFromData(data);
+			uatmap.updateFromData(data);
 			alert.hide();
 		}
 
