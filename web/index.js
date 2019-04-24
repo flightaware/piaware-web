@@ -124,7 +124,7 @@
 		},
 
                 updateFromData: function(data) {
-                        if ('MODES_enabled' in data && data['MODES_enabled'] == true) {
+                        if ('modes_enabled' in data && data['modes_enabled'] == true) {
                                 this.set('visible', true);
                         } else {
                                 this.set('visible', false);
@@ -159,7 +159,7 @@
                 },
 
                 updateFromData: function(data) {
-                        if ('UAT_enabled' in data && data['UAT_enabled'] == true) {
+                        if ('uat_enabled' in data && data['uat_enabled'] == true) {
                                 this.set('visible', true);
                         } else {
                                 this.set('visible', false);
@@ -301,7 +301,11 @@
 	var indicators = new IndicatorCollection([
 		{
 			name: 'radio',
-			title: 'Radio'
+			title: 'Mode S Radio'
+		},
+		{
+			name: 'uat_radio',
+			title: 'UAT Radio'
 		},
 		{
 			name: 'piaware',
