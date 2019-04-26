@@ -119,7 +119,7 @@
 	var Skyview1090MapLink = Backbone.Model.extend({
 		defaults: {
 			url: '/dump1090-fa/',
-			text: 'Go to Skyview 1090 Map',
+			text: 'Go to 1090 Skyview Map',
 			visible: true,
 		},
 
@@ -154,7 +154,7 @@
         var Skyview978MapLink = Backbone.Model.extend({
                 defaults: {
 			url: '/skyview978/',
-			text: 'Go to Skyview 978 Map',
+			text: 'Go to 978 UAT Skyview Map',
 			visible: false,
                 },
 
@@ -300,12 +300,16 @@
 	// indicators, just add to this list.
 	var indicators = new IndicatorCollection([
 		{
+			name: 'no_radio',
+			title: 'Radio'
+		},
+		{
 			name: 'radio',
-			title: 'Mode S Radio'
+			title: '1090 Radio'
 		},
 		{
 			name: 'uat_radio',
-			title: 'UAT Radio'
+			title: '978 UAT Radio'
 		},
 		{
 			name: 'piaware',
