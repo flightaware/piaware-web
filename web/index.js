@@ -119,7 +119,7 @@
 	var Skyview1090MapLink = Backbone.Model.extend({
 		defaults: {
 			url: '/dump1090-fa/',
-			text: 'Go to 1090 Skyview Map',
+			text: 'Go to 1090 SkyAware Map',
 			visible: true,
 		},
 
@@ -154,7 +154,7 @@
         var Skyview978MapLink = Backbone.Model.extend({
                 defaults: {
 			url: '/skyview978/',
-			text: 'Go to 978 UAT Skyview Map',
+			text: 'Go to 978 UAT SkyAware Map',
 			visible: false,
                 },
 
