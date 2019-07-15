@@ -153,7 +153,7 @@
 
         var Skyview978MapLink = Backbone.Model.extend({
                 defaults: {
-			url: '/skyview978/',
+			url: '/skyaware978/',
 			text: 'Go to 978 UAT SkyAware Map',
 			visible: false,
                 },
