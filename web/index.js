@@ -116,7 +116,7 @@
 		},
 	});
 
-	var Skyview1090MapLink = Backbone.Model.extend({
+	var SkyAware1090MapLink = Backbone.Model.extend({
 		defaults: {
 			url: '/dump1090-fa/',
 			text: 'Go to 1090 SkyAware Map',
@@ -132,7 +132,7 @@
                 }
 	});
 
-	var Skyview1090MapLinkView = Backbone.View.extend({
+	var SkyAware1090MapLinkView = Backbone.View.extend({
 		template: _.template($('#maplink-template').html()),
 
 		initialize: function() {
@@ -151,7 +151,7 @@
 		},
 	});
 
-        var Skyview978MapLink = Backbone.Model.extend({
+        var SkyAware978MapLink = Backbone.Model.extend({
                 defaults: {
 			url: '/skyaware978/',
 			text: 'Go to 978 UAT SkyAware Map',
@@ -167,7 +167,7 @@
                 }
         });
 
-        var Skyview978MapLinkView = Backbone.View.extend({
+        var SkyAware978MapLinkView = Backbone.View.extend({
                 template: _.template($('#maplink-template').html()),
 
                 initialize: function() {
@@ -352,14 +352,14 @@
 		model: claim
 	});
 
-	var map = new Skyview1090MapLink();
-	var mapView = new Skyview1090MapLinkView({
+	var map = new SkyAware1090MapLink();
+	var mapView = new SkyAware1090MapLinkView({
 		el: '#map',
 		model: map
 	});
 
-        var uatmap = new Skyview978MapLink();
-        var uatmapView = new Skyview978MapLinkView({
+        var uatmap = new SkyAware978MapLink();
+        var uatmapView = new SkyAware978MapLinkView({
                 el: '#uatmap',
                 model: uatmap
         });
