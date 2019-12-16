@@ -1,8 +1,8 @@
-piaware-web (3.8.0~dev) UNRELEASED; urgency=medium
+piaware-web (3.8.0) UNRELEASED; urgency=medium
 
-  * in development
+  * Build support for Buster
 
- -- Oliver Jowett <oliver@mutability.co.uk>  Thu, 07 Nov 2019 17:52:09 +0800
+ -- Oliver Jowett <oliver.jowett@flightaware.com>  Thu, 07 Nov 2019 17:52:09 +0800
 
 piaware-web (3.7.2) stable; urgency=medium
 
