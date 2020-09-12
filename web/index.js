@@ -50,6 +50,75 @@
 		}
 	});
 
+	var SystemInformation = Backbone.Model.extend({
+		defaults: {
+			mac: '',
+			cpu_temp: '',
+			cpu_load: '',
+			uptime: ''
+		},
+
+		updateFromData: function(data) {
+			if ('mac_address' in data) {
+				this.set('mac', data['mac_address']);
+			} else {
+				this.set('mac', 'N/A');
+			}
+
+			if ('cpu_temp_celcius' in data) {
+				var cpu_temp_celcius = data['cpu_temp_celcius'].toFixed(1);
+				this.set('cpu_temp', cpu_temp_celcius);
+			} else {
+				this.set('cpu_temp', 'N/A');
+			}
+
+			if ('cpu_load_percent' in data) {
+				this.set('cpu_load', data['cpu_load_percent']);
+			} else {
+				this.set('cpu_load', 'N/A');
+			}
+
+			if ('system_uptime' in data) {
+				var uptime = data['system_uptime'];
+				var uptime_minutes = uptime / 60;
+				var uptime_hours = uptime_minutes / 60;
+				var minutes = Math.floor(uptime_minutes % 60);
+				var hours = Math.floor(uptime_hours % 24);
+				var days = Math.floor(uptime_hours / 24)
+
+				var uptimeString = ''
+
+				if (days > 0) {
+					if (days == 1) {
+						uptimeString += '1 day, '
+					} else {
+						uptimeString += days + ' days, '
+					}
+				}
+
+				uptimeString += hours + ' hours ' + minutes + ' minutes'
+
+				this.set('uptime', uptimeString);
+			} else {
+				this.set('uptime', 'N/A');
+			}
+		}
+	});
+
+	var SystemInformationView = Backbone.View.extend({
+		template: _.template($('#sysinfo-template').html()),
+
+		initialize: function() {
+			this.listenTo(this.model, 'change', this.render);
+			this.render();
+		},
+
+		render: function() {
+			var rendered = this.template(this.model.attributes);
+			this.$el.html(rendered);
+		},
+	});
+
 	var StatsLink = Backbone.Model.extend({
 		defaults: {
 			url: '',
@@ -340,6 +409,12 @@
 		model: alert
 	});
 
+	var sysinfo = new SystemInformation();
+	var sysinfoView = new SystemInformationView({
+		el: '#sysinfo',
+		model: sysinfo
+	});
+
 	var stats = new StatsLink();
 	var statsView = new StatsLinkView({
 		el: '#stats',
@@ -358,11 +433,11 @@
 		model: map
 	});
 
-        var uatmap = new SkyAware978MapLink();
-        var uatmapView = new SkyAware978MapLinkView({
-                el: '#uatmap',
-                model: uatmap
-        });
+	var uatmap = new SkyAware978MapLink();
+	var uatmapView = new SkyAware978MapLinkView({
+		el: '#uatmap',
+		model: uatmap
+	});
 
 	var interval = {
 		id: undefined,
@@ -432,6 +507,7 @@
 
 		} else if (isRunning) {
 			indicators.updateFromData(data);
+			sysinfo.updateFromData(data);
 			stats.updateFromData(data);
 			claim.updateFromData(data);
 			map.updateFromData(data);

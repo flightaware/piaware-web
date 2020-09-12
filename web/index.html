@@ -26,6 +26,17 @@
       </p>
     </script>
 
+    <script id="sysinfo-template" type="text/template">
+        <b>Mac Address: </b> <%= mac %>
+        <br/>
+        <b>CPU Temperature: </b><%= cpu_temp %> °C
+        <br/>
+        <b>CPU Load: </b><%= cpu_load %>%
+        <br/>
+        <b>System Uptime: </b><%= uptime %>
+        <br/>
+    </script>
+
     <script id="stats-template" type="text/template">
       <p>
 	<a href="<%= url %>"><%= t('View your site statistics online') %></a>.
@@ -61,18 +72,18 @@
 	  <br/>
 
 	  <div id="alert"></div>
-
+	  <br/>
+	  <div id="sysinfo"></div>
 	  <br/>
 	  <div id="stats"></div>
 	  <br/>
 	  <div id="claim"></div>
-	  <br/>
 
-          <div style="text-align:center;">
-	     <div id="map" style="display:inline-block;"></div>
-	     <div id="uatmap" style="display:inline-block;"></div>
+	  <div style="text-align:center;">
+      <div id="map" style="display:inline-block;"></div>
+      <div id="uatmap" style="display:inline-block;"></div>
 	  </div>
-	</div>
+  </div>
       </div>
 
     </div>
