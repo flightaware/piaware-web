@@ -52,19 +52,12 @@
 
 	var SystemInformation = Backbone.Model.extend({
 		defaults: {
-			mac: '',
 			cpu_temp: '',
 			cpu_load: '',
 			uptime: ''
 		},
 
 		updateFromData: function(data) {
-			if ('mac_address' in data) {
-				this.set('mac', data['mac_address']);
-			} else {
-				this.set('mac', 'N/A');
-			}
-
 			if ('cpu_temp_celcius' in data) {
 				var cpu_temp_celcius = data['cpu_temp_celcius'].toFixed(1);
 				this.set('cpu_temp', cpu_temp_celcius);
