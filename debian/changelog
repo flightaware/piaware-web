@@ -1,8 +1,8 @@
-piaware-web (4.0~dev) UNRELEASED; urgency=medium
+piaware-web (4.0) stable; urgency=medium
 
-  * In development
+  * Adds system information to PiAware Status page (cpu temperature, load, uptime)
 
- -- Eric Tran <eric.tran@flightaware.com>  Mon, 21 Sep 2020 10:35:00 -6000
+ -- Eric Tran <eric.tran@flightaware.com>  Wed, 23 Sep 2020 16:03:00 -6000
 
 piaware-web (3.8.1) stable; urgency=medium
 
