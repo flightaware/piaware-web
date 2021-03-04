@@ -178,10 +178,10 @@
 		},
 	});
 
-	var SkyAware1090MapLink = Backbone.Model.extend({
+	var SkyAwareMapLink = Backbone.Model.extend({
 		defaults: {
-			url: '/dump1090-fa/',
-			text: 'Go to 1090 SkyAware Map',
+			url: '/skyaware/',
+			text: 'Go to SkyAware Map',
 			visible: true,
 		},
 
@@ -194,7 +194,7 @@
                 }
 	});
 
-	var SkyAware1090MapLinkView = Backbone.View.extend({
+	var SkyAwareMapLinkView = Backbone.View.extend({
 		template: _.template($('#maplink-template').html()),
 
 		initialize: function() {
@@ -420,8 +420,8 @@
 		model: claim
 	});
 
-	var map = new SkyAware1090MapLink();
-	var mapView = new SkyAware1090MapLinkView({
+	var map = new SkyAwareMapLink();
+	var mapView = new SkyAwareMapLinkView({
 		el: '#map',
 		model: map
 	});
