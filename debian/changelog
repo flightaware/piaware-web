@@ -1,8 +1,8 @@
-piaware-web (5.0~dev) UNRELEASED; urgency=medium
+piaware-web (5.0) UNRELEASED; urgency=medium
 
-  * In development
+  * Update status page SkyAware links to point to new SkyAware URL
 
- -- Eric Tran <eric.tran@flightaware.com>  Sat, 06 Feb 2020 19:33:00 -6000
+ -- Eric Tran <eric.tran@flightaware.com>  Fri, 05 Mar 2020 07:19:00 -6000
 
 piaware-web (4.0) stable; urgency=medium
 
