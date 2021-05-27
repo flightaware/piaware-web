@@ -52,7 +52,6 @@
 
 	var SystemInformation = Backbone.Model.extend({
 		defaults: {
-			unique_identifier: '',
 			piaware_version: '',
 			dump1090_version: '',
 			dump978_version: '',
@@ -62,12 +61,6 @@
 		},
 
 		updateFromData: function(data) {
-			if ('feeder_id' in data) {
-				this.set('unique_identifier', data['feeder_id']);
-			} else {
-				this.set('unique_identifier', 'N/A');
-			}
-
 			if ('piaware_version' in data && data['piaware_version'] !== "") {
 				this.set('piaware_version', data['piaware_version']);
 			} else {
