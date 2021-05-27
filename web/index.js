@@ -52,12 +52,40 @@
 
 	var SystemInformation = Backbone.Model.extend({
 		defaults: {
+			unique_identifier: '',
+			piaware_version: '',
+			dump1090_version: '',
+			dump978_version: '',
 			cpu_temp: '',
 			cpu_load: '',
 			uptime: ''
 		},
 
 		updateFromData: function(data) {
+			if ('feeder_id' in data) {
+				this.set('unique_identifier', data['feeder_id']);
+			} else {
+				this.set('unique_identifier', 'N/A');
+			}
+
+			if ('piaware_version' in data) {
+				this.set('piaware_version', data['piaware_version']);
+			} else {
+				this.set('piaware_version', 'N/A');
+			}
+
+			if ('dump1090_version' in data) {
+				this.set('dump1090_version', data['dump1090_version']);
+			} else {
+				this.set('dump1090_version', 'N/A');
+			}
+
+			if ('dump978_version' in data) {
+				this.set('dump978_version', data['dump978_version']);
+			} else {
+				this.set('dump978_version', 'N/A');
+			}
+
 			if ('cpu_temp_celcius' in data) {
 				var cpu_temp_celcius = data['cpu_temp_celcius'].toFixed(1);
 				this.set('cpu_temp', cpu_temp_celcius);

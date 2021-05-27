@@ -27,7 +27,17 @@
     </script>
 
     <script id="sysinfo-template" type="text/template">
-        <b>CPU Temperature: </b><%= cpu_temp %> °C
+        <b>Unique Identifier: </b><%= unique_identifier %>
+        <br/>
+        <br/>
+        <b>PiAware Version: </b><%= piaware_version %>
+        <br/>
+        <b>Dump1090-fa Version: </b><%= dump1090_version %>
+        <br/>
+        <b>Dump978-fa Version: </b><%= dump978_version %>
+        <br/>
+        <br/>
+        <b>CPU Temperature: </b><%= cpu_temp %> <C2><B0>C
         <br/>
         <b>CPU Load: </b><%= cpu_load %>%
         <br/>
