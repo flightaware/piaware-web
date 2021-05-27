@@ -68,19 +68,19 @@
 				this.set('unique_identifier', 'N/A');
 			}
 
-			if ('piaware_version' in data) {
+			if ('piaware_version' in data && data['piaware_version'] !== "") {
 				this.set('piaware_version', data['piaware_version']);
 			} else {
 				this.set('piaware_version', 'N/A');
 			}
 
-			if ('dump1090_version' in data) {
+			if ('dump1090_version' in data && data['dump1090_version'] !== "") {
 				this.set('dump1090_version', data['dump1090_version']);
 			} else {
 				this.set('dump1090_version', 'N/A');
 			}
 
-			if ('dump978_version' in data) {
+			if ('dump978_version' in data && data['dump978_version'] !== "") {
 				this.set('dump978_version', data['dump978_version']);
 			} else {
 				this.set('dump978_version', 'N/A');
