@@ -1,8 +1,8 @@
-piaware-web (6.0) UNRELEASED; urgency=medium
+piaware-web (6.0) stable; urgency=medium
 
-  * In development
+  * Update underscore.min.js to address vulnerability CVE-2021-23358
 
- -- Eric Tran <eric.tran@flightaware.com>  Tue, 17 Aug 2021 16:00:00 -0600
+ -- Eric Tran <eric.tran@flightaware.com>  Tue, 31 Aug 2021 16:00:00 -0600
 
 piaware-web (5.0) stable; urgency=medium
 
