@@ -2,7 +2,7 @@ Source: piaware-web
 Section: embedded
 Priority: extra
 Maintainer: FlightAware Developers <adsb-devs@flightaware.com>
-Build-Depends: debhelper(>=9)
+Build-Depends: debhelper(>=10)
 Standards-Version: 3.9.3
 Homepage: https://github.com/flightaware
 

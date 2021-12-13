@@ -12,8 +12,8 @@ then
 fi
 
 
-export DEBFULLNAME=${DEBFULLNAME:-FlightAware build automation}
-export DEBEMAIL=${DEBEMAIL:-adsb-devs@flightaware.com}
+export DEBFULLNAME="${DEBFULLNAME:-FlightAware build automation}"
+export DEBEMAIL="${DEBEMAIL:-adsb-devs@flightaware.com}"
 
 TOP=`dirname $0`
 DIST=$1
@@ -38,19 +38,18 @@ cp -a $FILES $OUT
 cp -a $TOP/debian $OUT
 
 case "$DIST" in
-    jessie)
-        echo "Updating changelog for jessie backport build" >&2
-        dch --changelog $OUT/debian/changelog --local ~bpo8+ --force-distribution --distribution jessie-backports "Automated backport build for jessie"
-        ;;
-
     stretch)
         echo "Updating changelog for stretch backport build" >&2
         dch --changelog $OUT/debian/changelog --local ~bpo9+ --force-distribution --distribution stretch-backports "Automated backport build for stretch"
         ;;
 
     buster)
+        echo "Updating changelog for buster backport build" >&2
+        dch --changelog $OUT/debian/changelog --local ~bpo10+ --force-distribution --distribution buster-backports "Automated backport build for buster"
         ;;
 
+    bullseye)
+        ;;
     *)
         echo "Don't know how to build for a distribution named $DIST" >&2
         exit 1
