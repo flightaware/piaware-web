@@ -1,3 +1,9 @@
+piaware-web (7.1) stable; urgency=medium
+
+  * No change release for 7.1
+
+ -- Eric Tran <eric.tran@flightaware.com>  Tue, 11 Jan 2022 07:52:21 -0600
+
 piaware-web (7.0) stable; urgency=medium
 
   * Add support for building on Bullseye
