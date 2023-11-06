@@ -1,8 +1,8 @@
-piaware-web (9.0~dev) UNRELEASED; urgency=medium
+piaware-web (9.0) stable; urgency=medium
 
   * No change release for 9.0
 
- -- Eric Tran <eric.tran@flightaware.com>  Tue, 24 Oct 2023 02:13:55 -0600
+ -- Oliver Jowett <oliver.jowett@flightaware.com>  Mon, 06 Nov 2023 21:41:25 +0800
 
 piaware-web (8.2) stable; urgency=medium
 
