@@ -1,8 +1,8 @@
-piaware-web (10.0~dev) UNRELEASED; urgency=medium
+piaware-web (10.0) stable; urgency=medium
 
-  * No change release for 10.0~dev
+  * No change release for 10.0
 
- -- Nick Wan <nicholas.wan@flightaware.com>  Tue, 03 Dec 2024 21:35:47 +0000
+ -- Nicholas Wan <nicholas.wan@flightaware.com>  Wed, 26 Feb 2025 16:30:53 +0000
 
 piaware-web (9.0) stable; urgency=medium
 
