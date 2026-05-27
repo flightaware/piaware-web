@@ -46,7 +46,7 @@
 		},
 
 		toggleVisible: function() {
-			this.$el.toggleClass('hidden', !this.model.get('visible'));
+			this.$el.toggleClass('d-none', !this.model.get('visible'));
 		}
 	});
 
@@ -157,9 +157,9 @@
 
 		render: function() {
 			if (this.model.get('url') == '') {
-				this.$el.addClass('hidden');
+				this.$el.addClass('d-none');
 			} else {
-				this.$el.removeClass('hidden');
+				this.$el.removeClass('d-none');
 				var rendered = this.template(this.model.attributes);
 				this.$el.html(rendered);
 			}
@@ -190,9 +190,9 @@
 
 		render: function() {
 			if (this.model.get('feeder_id') == '') {
-				this.$el.addClass('hidden');
+				this.$el.addClass('d-none');
 			} else {
-				this.$el.removeClass('hidden');
+				this.$el.removeClass('d-none');
 				var rendered = this.template(this.model.attributes);
 				this.$el.html(rendered);
 			}
@@ -225,9 +225,9 @@
 
 		render: function() {
 			if (!this.model.get('visible')) {
-				this.$el.addClass('hidden');
+				this.$el.addClass('d-none');
 			} else {
-				this.$el.removeClass('hidden');
+				this.$el.removeClass('d-none');
 				var rendered = this.template(this.model.attributes);
 				this.$el.html(rendered);
 			}
@@ -260,9 +260,9 @@
 
                 render: function() {
                         if (!this.model.get('visible')) {
-                                this.$el.addClass('hidden');
+                                this.$el.addClass('d-none');
                         } else {
-                                this.$el.removeClass('hidden');
+                                this.$el.removeClass('d-none');
                                 var rendered = this.template(this.model.attributes);
                                 this.$el.html(rendered);
                         }

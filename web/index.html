@@ -5,12 +5,32 @@
     <title>PiAware Info</title>
     <link rel="icon" href="./favicon.ico">
     <link href="./lib/bootstrap.min.css" rel="stylesheet">
+    <style>
+      /* Restores the old Bootstrap 3 page-header look */
+      .page-header {
+        padding-bottom: 9px;
+        margin: 40px 0 20px;
+        border-bottom: 1px solid #eee;
+      }
+      /* evenly divide the row space among members of btn-group */
+      #indicators { display: flex; width: 100%; }
+      #indicators .btn-group { flex: 1; }
+      #indicators .btn-group button { width: 100%; }
+
+    </style>
   </head>
 
   <body>
+
     <script id="indicator-template" type="text/template">
       <div class="btn-group" role="group">
-	<button id="status-<%= name %>" class="btn btn-<%= status %>" data-toggle="tooltip" data-placement="bottom" title="<%- message %>"><%= title %></button>
+        <button id="status-<%= name %>" 
+                class="btn btn-<%= status %>" 
+                data-toggle="tooltip" 
+                data-placement="bottom" 
+                title="<%- message %>">
+            <%= title %>
+        </button>
       </div>
     </script>
 
@@ -20,84 +40,84 @@
 
     <script id="description-template" type="text/template">
       <p>
-	<%= t('This is a PiAware ADS-B feeder') %>.
-	<%= t('For more information visit') %> <a href="https://flightaware.com/adsb/piaware/">flightaware.com</a>.
-	<%= t('Below you can view information to determine if your site is functioning properly') %>.
+        <%= t('This is a PiAware ADS-B feeder') %>.
+        <%= t('For more information visit') %> 
+        <a href="https://flightaware.com/adsb/piaware/">flightaware.com</a>.
+        <%= t('Below you can view information to determine if your site is functioning properly') %>.
       </p>
     </script>
 
     <script id="sysinfo-template" type="text/template">
-        <b>PiAware Version: </b><%= piaware_version %>
-        <br/>
-        <b>Dump1090-fa Version: </b><%= dump1090_version %>
-        <br/>
-        <b>Dump978-fa Version: </b><%= dump978_version %>
-        <br/>
-        <br/>
-        <b>CPU Temperature: </b><%= cpu_temp %> <C2><B0>C
-        <br/>
-        <b>CPU Load: </b><%= cpu_load %>%
-        <br/>
-        <b>System Uptime: </b><%= uptime %>
-        <br/>
+      <b>PiAware Version: </b><%= piaware_version %><br/>
+      <b>Dump1090-fa Version: </b><%= dump1090_version %><br/>
+      <b>Dump978-fa Version: </b><%= dump978_version %><br/><br/>
+      <b>CPU Temperature: </b><%= cpu_temp %> °C<br/>
+      <b>CPU Load: </b><%= cpu_load %>%<br/>
+      <b>System Uptime: </b><%= uptime %><br/>
     </script>
 
     <script id="stats-template" type="text/template">
       <p>
-	<a href="<%= url %>"><%= t('View your site statistics online') %></a>.
+        <a href="<%= url %>"><%= t('View your site statistics online') %></a>.
       </p>
     </script>
 
     <script id="claim-template" type="text/template">
       <p>
-	<%= t('This feeder is not yet associated with a FlightAware account') %>.
-	<a href="https://flightaware.com/adsb/piaware/claim/<%- feeder_id %>"><%= t('Claim this feeder to associate it with your FlightAware account') %></a>.
+        <%= t('This feeder is not yet associated with a FlightAware account') %>.
+        <a href="https://flightaware.com/adsb/piaware/claim/<%- feeder_id %>">
+          <%= t('Claim this feeder to associate it with your FlightAware account') %>
+        </a>.
       </p>
     </script>
 
     <script id="maplink-template" type="text/template">
-        <a href="<%= url %>" class="btn btn-primary btn-lg"><%= text %></a>
+      <a href="<%= url %>" class="btn btn-primary btn-lg"><%= text %></a>
     </script>
 
     <div class="container">
 
       <div class="page-header text-center">
-	<img src="./logo.gif"></img>
-	<p class="lead"><span id="status">PiAware Status</span></p>
+        <img src="./logo.gif" />
+        <p class="lead"><span id="status">PiAware Status</span></p>
       </div>
 
       <div class="row">
-	<div class="col-md-10 col-md-offset-1 text-center">
-	  <div id="description" class="row"></div>
+        <div class="col-md-10 offset-md-1 text-center">
 
-	  <div class="row">
-	    <div id="indicators" class="btn-group btn-group-justified" role="group"></div>
-	  </div>
+          <div id="description" class="row"></div>
 
-	  <br/>
+          <div class="row">
+            <div id="indicators" class="btn-group d-flex" role="group"></div>
+          </div>
 
-	  <div id="alert"></div>
-	  <br/>
-	  <div id="sysinfo"></div>
-	  <br/>
-	  <div id="stats"></div>
-	  <br/>
-	  <div id="claim"></div>
+          <br/>
 
-	  <div style="text-align:center;">
-      <div id="map" style="display:inline-block;"></div>
-      <div id="uatmap" style="display:inline-block;"></div>
-	  </div>
-  </div>
+          <div id="alert"></div>
+          <br/>
+          <div id="sysinfo"></div>
+          <br/>
+          <div id="stats"></div>
+          <br/>
+          <div id="claim"></div>
+
+          <div style="text-align:center;">
+            <div id="map" style="display:inline-block;"></div>
+            <div id="uatmap" style="display:inline-block;"></div>
+          </div>
+
+        </div>
       </div>
 
     </div>
 
     <script src="./lib/jquery.min.js"></script>
+    <script src="./lib/popper.min.js"></script>
     <script src="./lib/underscore.min.js"></script>
     <script src="./lib/backbone.min.js"></script>
     <script src="./lib/bootstrap.min.js"></script>
     <script src="./translations/lang.js"></script>
     <script src="./index.js"></script>
+
   </body>
 </html>
