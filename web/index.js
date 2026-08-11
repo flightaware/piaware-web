@@ -79,9 +79,9 @@
 				this.set('dump978_version', 'N/A');
 			}
 
-			if ('cpu_temp_celcius' in data) {
-				var cpu_temp_celcius = data['cpu_temp_celcius'].toFixed(1);
-				this.set('cpu_temp', cpu_temp_celcius);
+			if ('cpu_temp_celsius' in data) {
+				var cpu_temp_celcius = data['cpu_temp_celsius'].toFixed(1);
+				this.set('cpu_temp', cpu_temp_celsius);
 			} else {
 				this.set('cpu_temp', 'N/A');
 			}
