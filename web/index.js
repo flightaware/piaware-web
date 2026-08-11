@@ -459,7 +459,7 @@
 	};
 
 	$(function init() {
-		$.getJSON('./status.json')
+		$.getJSON('./status.json', {_: new Date().getTime()})
 			.then(render)
 			.then(pollJSON)
 			.fail(handleError);
@@ -470,7 +470,7 @@
 	}
 
 	function update() {
-		$.getJSON('./status.json')
+		$.getJSON('./status.json', {_: new Date().getTime()})
 			.then(setPollInterval)
 			.then(render)
 			.fail(handleError);
